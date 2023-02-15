@@ -1,6 +1,10 @@
-function capitalize(string) {
-  return string.replace(string[0], string[0].toUpperCase());
+function capitalize(lowerCaseString) {
+  const arr = Array.from(lowerCaseString);
+  while (arr[0] === " ") {
+    arr.splice(0, 1);
+  }
+  arr[0] = arr[0].toUpperCase();
+  return arr.join("");
 }
 
-const myString = "testing jest.";
-console.log(capitalize(myString));
+module.exports = capitalize;
