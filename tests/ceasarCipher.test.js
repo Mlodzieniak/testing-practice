@@ -20,3 +20,13 @@ test("ciphering entire sentence", () => {
   );
   expect(cipher("abcde", 2)).toMatch(/^cdefg$/);
 });
+test("keeping same case", () => {
+  expect(
+    cipher(
+      "Don’t forget to test keeping the same case. Don’t forget to test punctuation! d",
+      40
+    )
+  ).toMatch(
+    "Rcb’h tcfush hc hsgh yssdwbu hvs goas qogs. Rcb’h tcfush hc hsgh dibqhiohwcb! r"
+  );
+});
